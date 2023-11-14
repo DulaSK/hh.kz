@@ -2,7 +2,8 @@ const { Sequelize } = require('sequelize');
 const dbConf = require('./config')
 let sequelize 
 
-if(process.env === 'production'){
+if(process.env.NODE_ENV === 'production'){
+  console.log('===========')
     // Замените 'your_database_name', 'your_username', 'your_password' и 'your_host' на реальные значения
     sequelize = new Sequelize(dbConf.production.database , dbConf.production.username , dbConf.production.password, {
       host: dbConf.production.host,
