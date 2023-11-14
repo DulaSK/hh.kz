@@ -7,6 +7,10 @@ module.exports = {
         dialect: 'postgres',
     },
     production: {
-        //conf for production
+        username: 'admin',
+        password: 'root',
+        database: 'admin',
+        host: 'localhost',
+        dialect: 'postgres',
     }
 }

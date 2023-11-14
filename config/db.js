@@ -1,11 +1,20 @@
 const { Sequelize } = require('sequelize');
 const dbConf = require('./config')
+let sequelize 
 
-// Замените 'your_database_name', 'your_username', 'your_password' и 'your_host' на реальные значения
-const sequelize = new Sequelize(dbConf.development.database , dbConf.development.username , dbConf.development.password, {
-    host: dbConf.development.host,
-    dialect: dbConf.development.dialect,
-});
+if(process.env === 'production'){
+    // Замените 'your_database_name', 'your_username', 'your_password' и 'your_host' на реальные значения
+    sequelize = new Sequelize(dbConf.production.database , dbConf.production.username , dbConf.production.password, {
+      host: dbConf.production.host,
+      dialect: dbConf.production.dialect,
+  });
+}else{
+  // Замените 'your_database_name', 'your_username', 'your_password' и 'your_host' на реальные значения
+   sequelize = new Sequelize(dbConf.development.database , dbConf.development.username , dbConf.development.password, {
+      host: dbConf.development.host,
+      dialect: dbConf.development.dialect,
+  });
+}
 
 // Проверка подключения к базе данных
 sequelize.authenticate().then(() => {
