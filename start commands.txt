@@ -1,0 +1,22 @@
+для создания pakage.json - npm init 
+для установки библеотек - npm i (название библеотеки)
+для автоперезагрузки сервера - npm i nodemon -g
+для запуска скрипта pakage.json- npm run (название скрипта)
+для запуска скрипта dev pakage.json - npm run dev
+библеотека для вывода логов - npm i morgan
+
+docker-compose up --build - создать БД
+
+npx sequelize-cli db:migrate-запуск всех миграции в БД
+npx sequelize-cli migration:generate --name create-auth-code  - создать файл миграций 
+npx sequelize db:migrate:undo:all - откат всех миграции
+npx sequelize db:migrate:undo --name 20230803184159-create-auth-code.js -откат конкретной миграций 
+npx sequelize db:migrate:undo
+
+
+sequelize db:seed:all --seed name-of-seeder
+sequelize db:seed --seed      20230801200000-cities-cis-seeder - запуск сида
+sequelize seed:generate --name seed_skills - создать сид
+sequelize db:seed:all - закпуск всех сидов 
+
+
